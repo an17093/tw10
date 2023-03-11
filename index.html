@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Javascript Geolation API</h2>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onlick="getlocation()">Try It</button>
+    <p id="demo"></p>
+    
+    <script>
+      const x=document.getElemntById("demo");
+
+      function   getlocation(){
+        if(navigator.geolocation){
+          nvaigator.geolocation.watchPosition(showPosition);
+          
+        }
+        else{
+          x.innerHTML="Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position){
+        x.innerHTML="latitude:"+position.coords.latitude+"<br>longitude":+position.cords.latitude;
+      }
+    </script>
+  </body>
+</html>
